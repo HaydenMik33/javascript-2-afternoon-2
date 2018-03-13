@@ -16,6 +16,9 @@ var arr = [10,20,30];
   Create a function named 'first' that is given 'arr' as an argument.
   Return the first item in the given array.
 */
+function first(arr){
+  return arr[0];
+}
 
 //Code Here
 
@@ -33,7 +36,8 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr){
+   return arr[arr.length-1];}
 
 
 ////////// PROBLEM 3 //////////
@@ -49,7 +53,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 
 //Code Here
 
-
+function looper(family){
+ for(let i in family){
+   alert(family[i]);
+ }
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -64,7 +72,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 
-
+function reversedLooper(letters){
+ for(let i=letters.length-1; i>-1; i--){
+     alert(letters[i]);
+ }
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -78,7 +90,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  var even = [];
+  for(let i in nums){
+    if (nums[i]%2==0){
+      even.push(nums[i]);
+    }
+  }
+  return even;
+}
 
 
 ////////// EXTRA PRACTICE PROBLEMS BELOW //////////
@@ -95,7 +115,15 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray){
+  var even =[] ; var odds =[];
+  for(let num in numbersArray){
+    if(numbersArray[num]%2==0){even.push(numbersArray[num]);}
+    else{odds.push(numbersArray[num]);}
+  }
+  var dividedArr = [even,odds];
+  return dividedArr;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -117,7 +145,14 @@ var getRandomArbitrary = function() {
 
 //Code Here
 
+function finder(arr){
+  var randomNum = getRandomArbitrary();
 
+    if(arr.indexOf(randomNum)==-1){
+      return false; 
+    }
+    return true;
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -125,25 +160,35 @@ var getRandomArbitrary = function() {
 var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 // Do not edit the code above.
 
-/*
-  Here we're going to write a function that mimics going shopping and checking things off of our grocery list and adding new items to our list.
 
-  Write a function called removeItem that is given two arguments, the first is myGroceryList, and the second is an item to remove from myGroceryList. 
-  If the second argument (or the item to add or remove) matches an item in myGroceryList, remove that item from the your grocery list and return the new, updated grocery list.
+  // Here we're going to write a function that mimics going shopping and checking things off of our grocery list and adding new items to our list.
 
-  Once you do that, write another function called addItem that is given two arguments, the first is myGroceryList and the second is an item to add to your grocery list. 
-  In addItem add the item you passed in to myGroceryList then return the new, updated grocery list.
+  // Write a function called removeItem that is given two arguments, the first is myGroceryList, and the second is an item to remove from myGroceryList. 
+  // If the second argument (or the item to add or remove) matches an item in myGroceryList, remove that item from the your grocery list and return the new, updated grocery list.
 
-  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. SpecRunner will try to call your functions without passing in valid aurguments. 
-  When this happens, you will need to respond by returning an empty array.
+  function removeItem(myGroceryList,item){
+      if(myGroceryList.indexOf(item)!==-1){
+        myGroceryList.splice(myGroceryList.indexOf(item),1);
+      }
+      return myGroceryList;
+  }
+  
+  // Once you do that, write another function called addItem that is given two arguments, the first is myGroceryList and the second is an item to add to your grocery list. 
+  function addItem(myGroceryList,item){
+      myGroceryList.push(item);
+      return myGroceryList;
+  }
+  // In addItem add the item you passed in to myGroceryList then return the new, updated grocery list.
 
-  Here are some examples of calling your functions and what should be returned:
-  removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
-  addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
-*/
+  // In both the removeItem function and the addItem function, you will also need to check for valid aurguments. SpecRunner will try to call your functions without passing in valid aurguments. 
+  // When this happens, you will need to respond by returning an empty array.
+
+  // Here are some examples of calling your functions and what should be returned:
+  // removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+  // addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
+
 
 //Code Here
-
 
 
 ////////// PROBLEM 9 //////////
@@ -154,7 +199,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
-
+function maker(){
+  var arr = [];
+  for(let i =1; i<216; i++){
+  arr.push(i);
+  }
+  return arr;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -168,8 +219,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
-
+function addTen(numbers){
+  var newArr = [];
+  for(let i=0; i<numbers.length; i++){
+    newArr.push(Number(numbers[i])+10)
+  }
+  return  newArr;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -194,7 +250,10 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1,arr2){
+  if(arr1.length >arr2.length){return arr1}
+  else{return arr2}
+}
 
 
 /*
@@ -206,8 +265,15 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
-
+function both(arr1,arr2){
+  var newArray =[];
+  for(let i =0; i<arr1.length; i++){
+   if(arr2.indexOf(arr1[i])!==-1){
+     newArray.push(arr1[i]);
+   }
+  }
+  return newArray;
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -247,6 +313,7 @@ var colt = {
 
 //Code Here
 
+devMountainEmployees.push(tyler,cahlan,ryan,colt);
 
 
 /*
@@ -256,7 +323,7 @@ var colt = {
 
 //Code Here
 
-
+devMountainEmployees.splice(devMountainEmployees.indexOf(cahlan),1);
 
 ////////// PROBLEM 13 //////////
 
@@ -267,7 +334,7 @@ var colt = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -275,6 +342,9 @@ var colt = {
 
   Include the following user1 object as one of the objects in your array.
 */
+
+
+
 
 // Do not edit the code below.
 var user1 = {
@@ -286,9 +356,20 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Tyvvvler McGinswnis',
+  email: 'tylermcginnswis33@gmail.com',
+  password: 'iLoveJavswaSffsdcript',
+  username: 'infiniswtesfdfLoop'
+};
+var user3= {
+  name: 'Tylttter McfrGinnis',
+  email: 'tylermcginnisfr3strs3@gmail.com',
+  password: 'iLoveJavafrScrsdipt',
+  username: 'infinitedthydtyfdLfroop'
+};
 
-
-
+users.push(user1,user2,user3);
 /*
   Now you have a very common data structure. 
   Twitter is a good use case.
@@ -300,6 +381,12 @@ var user1 = {
 */
 
 //Code Here
+
+for(let i =0; i<users.length; i++){
+  if( users[i].email == "tylermcginnis33@gmail.com"){
+    users.splice(i,1);
+  }
+}
 
 
 
